@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.searchIcon {
+  position: relative;
+  fill: currentColor;
+  transition: color .5s;
+  stroke-width: 1.6;
+  top: 1px;
+  left: 30px;
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  color: rgba(60, 60, 67, 0.7);
+}
+
+.searchInput {
+  outline: none;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 30px;
+  border: 1px solid rgba(60, 60, 67, .12);
+  border-radius: 5px;
+}
