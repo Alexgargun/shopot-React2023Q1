@@ -1,5 +1,9 @@
+import { CardList } from 'components/CardList';
 import { SearchBar } from 'components/SearchBar';
 import React from 'react';
+import cardService from 'shared/services/cardService';
+
+const cards = cardService.findAll();
 
 export class MainPage extends React.Component {
   render() {
@@ -7,6 +11,7 @@ export class MainPage extends React.Component {
       <div className="container">
         <SearchBar />
         <h1 className="text-center">Hello, Main Page</h1>
+        <CardList cards={cards} />
       </div>
     );
   }
