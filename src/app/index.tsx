@@ -1,20 +1,24 @@
 import React from 'react';
-import reactLogo from '../assets/react.svg';
 import './index.scss';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { TypeRoute } from 'shared/types';
+import { NavBar } from 'components/NavBar';
+import { MainPage } from 'pages/main';
+import { NotFoundPage } from 'pages/404';
+import { AboutPage } from 'pages/about';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <a href="https://vitejs.dev" target="_blank">
-            <img src="/vite.svg" className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://reactjs.org" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path={TypeRoute.Main} element={<MainPage />} />
+            <Route path={TypeRoute.About} element={<AboutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     );
   }
