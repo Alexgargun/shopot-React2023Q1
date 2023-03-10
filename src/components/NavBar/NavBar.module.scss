@@ -1,18 +1,24 @@
 .nav {
   width: 100%;
+  max-width: 1200px;
   display: flex;
+  gap: 10px;
   justify-content: center;
   align-items: flex-start;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 10px;
+.navLink {
+  padding: 0;
+  text-decoration: none;
 
-  .menuItem {
-    padding: 10px;
+  &:not(.navLinkActive):hover {
+    opacity: .7;
   }
+}
+
+.navLinkActive {
+  text-decoration: underline;
 }
