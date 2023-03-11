@@ -8,11 +8,21 @@ export class Footer extends React.Component {
     return (
       <div className={styles.footer}>
         <div className={styles.footerInner}>
-          <a href="https://github.com/shopot" className={styles.shopot} target="_blank">
+          <a
+            href="https://github.com/shopot"
+            className={styles.shopot}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GithubOutlined style={{ fontSize: '26px' }} />
             <span>shopot</span>
           </a>
-          <a href="https://rs.school/react/" className={styles.rsschool} target="_blank">
+          <a
+            href="https://rs.school/react/"
+            className={styles.rsschool}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={rsschoolLogo} alt="RS School Logo" />
           </a>
         </div>
