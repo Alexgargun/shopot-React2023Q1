@@ -6,6 +6,7 @@ import { NavBar } from 'components/NavBar';
 import { MainPage } from 'pages/main';
 import { NotFoundPage } from 'pages/404';
 import { AboutPage } from 'pages/about';
+import { Footer } from 'components/Footer';
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Route path={TypeRoute.About} element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </div>
     );
