@@ -1,10 +1,10 @@
-import { ICardData } from 'shared/interfaces';
+import { ICard } from 'shared/interfaces';
 import cards from '../../data/cards.json';
 
 class CardService {
-  private data: ICardData[];
+  private data: ICard[];
 
-  constructor(data: ICardData[]) {
+  constructor(data: ICard[]) {
     this.data = data;
   }
 

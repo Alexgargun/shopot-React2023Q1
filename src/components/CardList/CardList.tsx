@@ -1,14 +1,14 @@
 import React from 'react';
-import { ICardData } from 'shared/interfaces';
+import { ICard } from 'shared/interfaces';
 import { Card } from './Card/Card';
 import styles from './CardList.module.scss';
 
 interface CardListProps {
-  cards: ICardData[];
+  cards: ICard[];
 }
 
 interface CardListState {
-  cards: ICardData[];
+  cards: ICard[];
 }
 
 export class CardList extends React.Component<CardListProps, CardListState> {
@@ -21,8 +21,12 @@ export class CardList extends React.Component<CardListProps, CardListState> {
   }
 
   render(): React.ReactNode {
-    return this.state.cards.map((card: ICardData) => {
-      return <Card key={card.id} card={card} />;
-    });
+    return (
+      <div className={styles.cardList}>
+        {this.state.cards.map((card: ICard) => {
+          return <Card key={card.id} card={card} />;
+        })}
+      </div>
+    );
   }
 }

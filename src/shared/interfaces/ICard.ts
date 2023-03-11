@@ -1,4 +1,4 @@
-export interface ICardData {
+export interface ICard {
   id: number;
   title: string;
   owner: string;
