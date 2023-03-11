@@ -7,9 +7,9 @@ interface ICardProps {
   card: ICard;
 }
 
-interface ICardState extends ICard {}
+type TypeCardState = ICard;
 
-export class Card extends React.Component<ICardProps, ICardState> {
+export class Card extends React.Component<ICardProps, TypeCardState> {
   constructor(props: ICardProps) {
     super(props);
 
