@@ -20,6 +20,13 @@ export class CardList extends React.Component<CardListProps, CardListState> {
     };
   }
 
+  componentDidMount(): void {
+    this.props.cards.forEach((card) => {
+      const img = new Image();
+      img.src = card.image;
+    });
+  }
+
   render(): React.ReactNode {
     return (
       <div className={styles.cardList}>
