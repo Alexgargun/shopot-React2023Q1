@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { ICard } from 'shared/interfaces';
 import { Card } from './Card/Card';
@@ -10,6 +11,24 @@ interface CardListProps {
 interface CardListState {
   cards: ICard[];
 }
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'linear',
+  duration: 1,
+};
 
 export class CardList extends React.Component<CardListProps, CardListState> {
   constructor(props: CardListProps) {
@@ -29,11 +48,19 @@ export class CardList extends React.Component<CardListProps, CardListState> {
 
   render(): React.ReactNode {
     return (
-      <div className={styles.cardList}>
-        {this.state.cards.map((card: ICard) => {
-          return <Card key={card.id} card={card} />;
-        })}
-      </div>
+      <motion.div
+        key="cardList"
+        initial="initial"
+        animate="in"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+        <div className={styles.cardList}>
+          {this.state.cards.map((card: ICard) => {
+            return <Card key={card.id} card={card} />;
+          })}
+        </div>
+      </motion.div>
     );
   }
 }
