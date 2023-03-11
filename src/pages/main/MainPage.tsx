@@ -10,7 +10,7 @@ export class MainPage extends React.Component {
     return (
       <div className="container">
         <SearchBar />
-        <h1 className="text-center">Hello, Main Page</h1>
+        <h1 className="text-center">YouTube API Websites</h1>
         <CardList cards={cards} />
       </div>
     );
