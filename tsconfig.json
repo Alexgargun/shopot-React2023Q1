@@ -18,6 +18,7 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "resolveJsonModule": true,
+    "outDir": "dist"
   },
   "include": [
     "./src/**/*",
