@@ -1,1 +1,1 @@
-export * from './ICardData';
+export * from './ICard';
