@@ -1,4 +1,5 @@
 import { CardList } from 'components/CardList';
+import { MotionContainer } from 'components/MotionContainer';
 import { SearchBar } from 'components/SearchBar';
 import React from 'react';
 import cardService from 'shared/services/cardService';
@@ -11,7 +12,9 @@ export class MainPage extends React.Component {
       <div className="container">
         <SearchBar />
         <h1 className="text-center">YouTube API Websites</h1>
-        <CardList cards={cards} />
+        <MotionContainer identKey="cardList">
+          <CardList cards={cards} />
+        </MotionContainer>
       </div>
     );
   }
