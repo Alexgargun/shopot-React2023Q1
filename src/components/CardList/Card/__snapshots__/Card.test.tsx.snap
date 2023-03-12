@@ -12,6 +12,7 @@ exports[`Card component > Card snapshot 1`] = `
           class="_image_0e4b9c"
         >
           <img
+            alt="Project Iceman Website"
             src="/images/633c61fe1238b459490255.webp"
           />
         </div>
@@ -102,6 +103,7 @@ exports[`Card component > Card snapshot 1`] = `
         class="_image_0e4b9c"
       >
         <img
+          alt="Project Iceman Website"
           src="/images/633c61fe1238b459490255.webp"
         />
       </div>

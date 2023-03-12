@@ -15,6 +15,7 @@ exports[`CardList component > CardList snapshot 1`] = `
             class="_image_0e4b9c"
           >
             <img
+              alt="Mock Object 1"
               src="/images/image-01.webp"
             />
           </div>
@@ -102,6 +103,7 @@ exports[`CardList component > CardList snapshot 1`] = `
             class="_image_0e4b9c"
           >
             <img
+              alt="Mock Object 2"
               src="/images/image-02.webp"
             />
           </div>
@@ -196,6 +198,7 @@ exports[`CardList component > CardList snapshot 1`] = `
           class="_image_0e4b9c"
         >
           <img
+            alt="Mock Object 1"
             src="/images/image-01.webp"
           />
         </div>
@@ -283,6 +286,7 @@ exports[`CardList component > CardList snapshot 1`] = `
           class="_image_0e4b9c"
         >
           <img
+            alt="Mock Object 2"
             src="/images/image-02.webp"
           />
         </div>
