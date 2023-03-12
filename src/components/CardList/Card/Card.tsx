@@ -16,7 +16,7 @@ export class Card extends React.Component<ICardProps, TypeCardState> {
     return (
       <div className={styles.card}>
         <div className={styles.image}>
-          <img src={image} />
+          <img src={image} alt={title} />
         </div>
         <div className={styles.body}>
           <div className={styles.title}>{title}</div>
