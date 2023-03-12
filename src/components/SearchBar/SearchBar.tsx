@@ -1,3 +1,4 @@
+import { SearchOutlined } from '@ant-design/icons';
 import React, { ChangeEvent } from 'react';
 import { searchStore } from '../../store/searchStore';
 import styles from './SearchBar.module.scss';
@@ -38,28 +39,19 @@ export class SearchBar extends React.Component<ISearchBarProps, SearchBarState> 
   render(): React.ReactNode {
     return (
       <div className={styles.wrapper}>
-        <div>
-          <label>
-            <svg width="20" height="20" className={styles.searchIcon} viewBox="0 0 20 20">
-              <path
-                d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
-                stroke="currentColor"
-                fill="none"
-                fillRule="evenodd"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></path>
-            </svg>
-          </label>
+        <div className={styles.searchInputWrapper}>
+          <SearchOutlined className={styles.searchIcon} />
           <input
             value={this.state.search}
             onChange={this.handleChangeSearch.bind(this)}
-            type="text"
             className={styles.searchInput}
+            type="text"
             placeholder="Search bar design guide"
           />
         </div>
-        <button type="button">Search</button>
+        <button className={styles.btnOutlined} type="button">
+          Search
+        </button>
       </div>
     );
   }
