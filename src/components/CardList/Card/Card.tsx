@@ -10,37 +10,31 @@ interface ICardProps {
 type TypeCardState = ICard;
 
 export class Card extends React.Component<ICardProps, TypeCardState> {
-  constructor(props: ICardProps) {
-    super(props);
-
-    this.state = {
-      ...props.card,
-    };
-  }
-
   render(): React.ReactNode {
+    const { title, owner, image, views, likes, addedAt } = this.props.card;
+
     return (
       <div className={styles.card}>
         <div className={styles.image}>
-          <img src={this.state.image} />
+          <img src={image} />
         </div>
         <div className={styles.body}>
-          <div className={styles.title}>{this.state.title}</div>
+          <div className={styles.title}>{title}</div>
           <div className={styles.by}>
-            Added by <span>{this.state.owner}</span>
+            Added by <span>{owner}</span>
           </div>
           <div className={styles.info}>
             <div className={styles.stats}>
               <span>
                 <EyeOutlined className={styles.statsIcon} style={{ color: 'gray' }} />
-                {this.state.views}
+                {views}
               </span>
               <span>
                 <LikeOutlined className={styles.statsIcon} style={{ color: 'gray' }} />
-                {this.state.likes}
+                {likes}
               </span>
             </div>
-            <div className={styles.addedAt}>{this.state.addedAt}</div>
+            <div className={styles.addedAt}>{addedAt}</div>
           </div>
         </div>
       </div>
