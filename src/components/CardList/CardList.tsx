@@ -12,29 +12,14 @@ interface CardListState {
 }
 
 export class CardList extends React.Component<CardListProps, CardListState> {
-  constructor(props: CardListProps) {
-    super(props);
-
-    this.state = {
-      cards: props.cards,
-    };
-  }
-
-  componentDidMount(): void {
-    this.props.cards.forEach((card) => {
-      const img = new Image();
-      img.src = card.image;
-    });
-  }
-
   render(): React.ReactNode {
-    if (this.state.cards.length === 0) {
+    if (this.props.cards.length === 0) {
       return <div className="text-center">No data</div>;
     }
 
     return (
       <div className={styles.cardList}>
-        {this.state.cards.map((card: ICard) => {
+        {this.props.cards.map((card: ICard) => {
           return <Card key={card.id} card={card} />;
         })}
       </div>
