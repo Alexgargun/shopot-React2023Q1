@@ -3,16 +3,12 @@ import React, { ChangeEvent } from 'react';
 import { searchStore } from '../../store/searchStore';
 import styles from './SearchBar.module.scss';
 
-interface ISearchBarProps {
-  children?: React.ReactNode;
-}
-
 interface SearchBarState {
   search: string;
 }
 
-export class SearchBar extends React.Component<ISearchBarProps, SearchBarState> {
-  constructor(props: ISearchBarProps) {
+export class SearchBar extends React.Component<object, SearchBarState> {
+  constructor(props: object) {
     super(props);
 
     this.state = {
