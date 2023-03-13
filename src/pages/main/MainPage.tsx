@@ -19,8 +19,6 @@ export class MainPage extends React.Component<object, IMainPageState> {
   }
 
   componentDidMount(): void {
-    document.title = 'React Components: Main page';
-
     const cards: ICard[] = cardService.findAll();
 
     // Load images

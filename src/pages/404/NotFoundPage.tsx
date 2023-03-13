@@ -1,10 +1,6 @@
 import React from 'react';
 
 export class NotFoundPage extends React.Component {
-  componentDidMount(): void {
-    document.title = 'React Components: 404';
-  }
-
   render() {
     return (
       <div className="container">
