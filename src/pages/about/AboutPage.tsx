@@ -1,18 +1,11 @@
 import React from 'react';
 
-interface IAboutPageProps {
-  children?: React.ReactNode;
-}
-
-export class AboutPage extends React.Component<IAboutPageProps> {
+export class AboutPage extends React.Component {
   render() {
     return (
-      <>
-        {this.props.children}
-        <div className="container">
-          <h1 className="text-center">About Us page!</h1>
-        </div>
-      </>
+      <div className="container">
+        <h1 className="text-center">About Us page!</h1>
+      </div>
     );
   }
 }

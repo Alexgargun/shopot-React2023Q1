@@ -5,16 +5,12 @@ import React from 'react';
 import { ICard } from 'shared/interfaces';
 import cardService from 'shared/services/cardService';
 
-interface IMainPageProps {
-  children?: React.ReactNode;
-}
-
 interface IMainPageState {
   cards: ICard[];
 }
 
-export class MainPage extends React.Component<IMainPageProps, IMainPageState> {
-  constructor(props: IMainPageProps) {
+export class MainPage extends React.Component<Record<string, never>, IMainPageState> {
+  constructor(props: Record<string, never>) {
     super(props);
 
     this.state = {
@@ -37,7 +33,6 @@ export class MainPage extends React.Component<IMainPageProps, IMainPageState> {
   render() {
     return (
       <>
-        {this.props.children}
         <div className="container">
           <SearchBar />
           <h1 className="text-center">Main page</h1>
