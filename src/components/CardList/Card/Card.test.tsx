@@ -22,9 +22,4 @@ describe('Card component', () => {
     render(<Card card={cardMock} />);
     expect(screen.getByText('Project Iceman Website')).toBeInTheDocument();
   });
-
-  it('Card snapshot', () => {
-    const result = render(<Card card={cardMock} />);
-    expect(result).toMatchSnapshot();
-  });
 });

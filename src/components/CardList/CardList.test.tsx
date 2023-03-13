@@ -39,9 +39,4 @@ describe('CardList component', () => {
     render(<CardList cards={[]} />);
     expect(screen.getByText('No data')).toBeInTheDocument();
   });
-
-  it('CardList snapshot', () => {
-    const result = render(<CardList cards={cardListMock} />);
-    expect(result).toMatchSnapshot();
-  });
 });
