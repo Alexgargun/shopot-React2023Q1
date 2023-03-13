@@ -1,13 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.headerText {
+  font-weight: 700;
+}
+
 .nav {
-  width: 100%;
-  max-width: 1200px;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 .navLink {

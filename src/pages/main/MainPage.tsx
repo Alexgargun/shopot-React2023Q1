@@ -1,5 +1,6 @@
 import { CardList } from 'components/CardList';
 import { MotionContainer } from 'components/MotionContainer';
+import { NavBar } from 'components/NavBar';
 import { SearchBar } from 'components/SearchBar';
 import React from 'react';
 import { ICard } from 'shared/interfaces';
@@ -32,13 +33,17 @@ export class MainPage extends React.Component<Record<string, never>, IMainPageSt
 
   render() {
     return (
-      <div className="container">
-        <SearchBar />
-        <h1 className="text-center">Main page</h1>
-        <MotionContainer identKey="cardList">
-          <CardList cards={this.state.cards} />
-        </MotionContainer>
-      </div>
+      <>
+        <NavBar headerText="Main" />
+
+        <div className="container">
+          <SearchBar />
+          <h1 className="text-center">Main page</h1>
+          <MotionContainer identKey="cardList">
+            <CardList cards={this.state.cards} />
+          </MotionContainer>
+        </div>
+      </>
     );
   }
 }
