@@ -6,6 +6,10 @@ Start date: 2023-03-13 03:00
 
 End date: 2023-03-20 02:59
 
+Link to deploy:
+
+[https://react-components-shopot.netlify.app/](https://react-components-shopot.netlify.app/)
+
 ## Installation
 
 ```bash
