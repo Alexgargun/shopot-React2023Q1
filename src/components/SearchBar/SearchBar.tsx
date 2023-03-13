@@ -7,8 +7,8 @@ interface SearchBarState {
   search: string;
 }
 
-export class SearchBar extends React.Component<object, SearchBarState> {
-  constructor(props: object) {
+export class SearchBar extends React.Component<Record<string, never>, SearchBarState> {
+  constructor(props: Record<string, never>) {
     super(props);
 
     this.state = {
