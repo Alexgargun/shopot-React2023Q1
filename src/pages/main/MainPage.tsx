@@ -19,6 +19,8 @@ export class MainPage extends React.Component<object, IMainPageState> {
   }
 
   componentDidMount(): void {
+    document.title = 'React Components: Main page';
+
     const cards: ICard[] = cardService.findAll();
 
     // Load images
@@ -34,7 +36,7 @@ export class MainPage extends React.Component<object, IMainPageState> {
     return (
       <div className="container">
         <SearchBar />
-        <h1 className="text-center">YouTube API Websites</h1>
+        <h1 className="text-center">Main page</h1>
         <MotionContainer identKey="cardList">
           <CardList cards={this.state.cards} />
         </MotionContainer>
