@@ -12,7 +12,7 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
     super(props);
 
     this.state = {
-      search: '',
+      search: searchStore.get(),
     };
   }
 
