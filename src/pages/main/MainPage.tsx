@@ -9,8 +9,8 @@ interface IMainPageState {
   cards: ICard[];
 }
 
-export class MainPage extends React.Component<object, IMainPageState> {
-  constructor(props: object) {
+export class MainPage extends React.Component<Record<string, never>, IMainPageState> {
+  constructor(props: Record<string, never>) {
     super(props);
 
     this.state = {
