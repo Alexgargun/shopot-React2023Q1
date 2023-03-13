@@ -39,7 +39,9 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
           <SearchOutlined className={styles.searchIcon} />
           <input
             value={this.state.search}
-            onChange={this.handleChangeSearch.bind(this)}
+            onChange={(e) => {
+              this.handleChangeSearch(e);
+            }}
             className={styles.searchInput}
             type="text"
             placeholder="Search bar design guide"
