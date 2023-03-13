@@ -1,17 +1,20 @@
 import { CardList } from 'components/CardList';
 import { MotionContainer } from 'components/MotionContainer';
-import { NavBar } from 'components/NavBar';
 import { SearchBar } from 'components/SearchBar';
 import React from 'react';
 import { ICard } from 'shared/interfaces';
 import cardService from 'shared/services/cardService';
 
+interface IMainPageProps {
+  children?: React.ReactNode;
+}
+
 interface IMainPageState {
   cards: ICard[];
 }
 
-export class MainPage extends React.Component<Record<string, never>, IMainPageState> {
-  constructor(props: Record<string, never>) {
+export class MainPage extends React.Component<IMainPageProps, IMainPageState> {
+  constructor(props: IMainPageProps) {
     super(props);
 
     this.state = {
@@ -34,8 +37,7 @@ export class MainPage extends React.Component<Record<string, never>, IMainPageSt
   render() {
     return (
       <>
-        <NavBar headerText="Main" />
-
+        {this.props.children}
         <div className="container">
           <SearchBar />
           <h1 className="text-center">Main page</h1>
