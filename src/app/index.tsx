@@ -12,6 +12,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Routes>
+          <Route index element={<PageContainer headerText="Main" content={<MainPage />} />} />
           <Route
             path={TypeRoute.Index}
             element={<PageContainer headerText="Main" content={<MainPage />} />}
