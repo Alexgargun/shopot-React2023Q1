@@ -1,3 +1,4 @@
+import { Footer } from 'components/Footer';
 import { NavBar } from 'components/NavBar';
 import React from 'react';
 
@@ -12,6 +13,7 @@ export class PageContainer extends React.Component<IPageContainerProps> {
       <>
         <NavBar headerText={this.props.headerText} />
         {this.props.content}
+        <Footer />
       </>
     );
   }
