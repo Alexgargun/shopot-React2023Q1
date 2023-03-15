@@ -3,30 +3,28 @@ import { NavLink } from 'react-router-dom';
 import { TypeRoute } from 'shared/types';
 import styles from './NavBar.module.scss';
 
-interface INavBarProps {
+type TypeNavBarProps = typeof NavBar.defaultProps & {
   headerText?: string;
-}
+};
 
-export class NavBar extends React.Component<INavBarProps> {
+export class NavBar extends React.Component<TypeNavBarProps> {
+  static defaultProps = {
+    headerText: 'Main',
+  };
+
+  getLinkStyle(isActive: boolean) {
+    return isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink;
+  }
+
   render(): React.ReactNode {
     return (
       <header className="container">
-        <div className={styles.headerText}>{this.props.headerText || 'Main'}</div>
+        <div className={styles.headerText}>{this.props.headerText}</div>
         <nav className={styles.nav}>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
-            }
-            to={TypeRoute.Main}
-          >
+          <NavLink className={({ isActive }) => this.getLinkStyle(isActive)} to={TypeRoute.Main}>
             Main
           </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
-            }
-            to={TypeRoute.About}
-          >
+          <NavLink className={({ isActive }) => this.getLinkStyle(isActive)} to={TypeRoute.About}>
             About Us
           </NavLink>
         </nav>
