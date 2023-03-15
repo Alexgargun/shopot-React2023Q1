@@ -3,15 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { TypeRoute } from 'shared/types';
 import styles from './NavBar.module.scss';
 
-type TypeNavBarProps = typeof NavBar.defaultProps & {
-  headerText?: string;
-};
+interface INavBarProps {
+  headerText: string;
+}
 
-export class NavBar extends React.Component<TypeNavBarProps> {
-  static defaultProps = {
-    headerText: 'Main',
-  };
-
+export class NavBar extends React.Component<INavBarProps> {
   getLinkStyle(isActive: boolean) {
     return isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink;
   }
