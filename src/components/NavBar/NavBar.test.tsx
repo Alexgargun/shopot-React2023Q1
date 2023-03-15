@@ -9,7 +9,7 @@ const text = 'NavBar text for header';
 /**
  * @vitest-environment jsdom
  */
-describe('NavBar component without props', () => {
+describe('NavBar component', () => {
   it('NavBar renders', async () => {
     render(
       <BrowserRouter>
