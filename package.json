@@ -9,7 +9,17 @@
     "preview": "vite preview",
     "lint": "eslint ./src --ext .ts,.tsx",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install",
+    "lintstaged": "lint-staged --relative"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.css": [
+      "prettier --write -config .prettierrc"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
