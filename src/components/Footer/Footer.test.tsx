@@ -9,6 +9,6 @@ describe('Footer component', () => {
   it('Footer renders', () => {
     render(<Footer />);
     expect(screen.getByText('shopot')).toBeInTheDocument();
-    expect(screen.getByText('RS School Logo')).toBeInTheDocument();
+    expect(screen.getByAltText('RS School Logo')).toBeInTheDocument();
   });
 });
