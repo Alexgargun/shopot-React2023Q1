@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class NotFoundPage extends React.Component {
+export default class Error404 extends React.Component {
   render() {
     return (
       <div className="container">
