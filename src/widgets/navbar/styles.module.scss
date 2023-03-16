@@ -1,0 +1,29 @@
+.innerHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.headerText {
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.navLink {
+  padding: 0;
+  text-decoration: none;
+
+  &:not(.navLinkActive):hover {
+    opacity: .7;
+  }
+}
+
+.navLinkActive {
+  text-decoration: underline;
+}
