@@ -1,4 +1,4 @@
-import './ButtonOutlined.scss';
+import styles from './ButtonOutlined.module.scss';
 
 // Button props
 type TypeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -14,7 +14,7 @@ export const ButtonOutlined = (props: TypeButtonProps & typeof defaultProps) => 
   // Button render
   const { variant, className, ...rest } = props;
 
-  return <button className={`btn ${variant} ${className}`} {...rest} />;
+  return <button className={`${styles.btn} ${styles[variant]} ${className}`} {...rest} />;
 };
 
 ButtonOutlined.defaultProps = defaultProps;
