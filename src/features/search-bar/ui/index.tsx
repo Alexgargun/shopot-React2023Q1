@@ -1,7 +1,7 @@
+import styles from './styles.module.scss';
 import React, { ChangeEvent } from 'react';
-import { ButtonOutlined, SearchOutlined } from 'shared/UI';
-import { searchStore } from '../../store/searchStore';
-import styles from './SearchBar.module.scss';
+import { getSearchValue, setSearchValue } from 'shared/lib';
+import { Button, SearchOutlined } from 'shared/ui';
 
 interface SearchBarState {
   search: string;
@@ -12,16 +12,16 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
     super(props);
 
     this.state = {
-      search: searchStore.get(),
+      search: getSearchValue(),
     };
   }
 
   componentDidMount(): void {
-    this.setState({ search: searchStore.get() });
+    this.setState({ search: getSearchValue() });
   }
 
   componentWillUnmount(): void {
-    searchStore.set(this.state.search);
+    setSearchValue(this.state.search);
   }
 
   handleChangeSearch(e: ChangeEvent) {
@@ -45,7 +45,7 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
             placeholder="Search bar design guide"
           />
         </div>
-        <ButtonOutlined className={styles.btnOutlined}>Search</ButtonOutlined>
+        <Button type="button">Search</Button>
       </div>
     );
   }
