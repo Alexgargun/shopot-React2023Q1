@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { SearchOutlined } from 'shared/UI';
+import { ButtonOutlined, SearchOutlined } from 'shared/UI';
 import { searchStore } from '../../store/searchStore';
 import styles from './SearchBar.module.scss';
 
@@ -36,7 +36,6 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
     return (
       <div className={styles.wrapper}>
         <div className={styles.searchInputWrapper}>
-          {/* <SearchOutlined className={styles.searchIcon} /> */}
           <SearchOutlined className={styles.searchIcon} />
           <input
             value={this.state.search}
@@ -46,9 +45,7 @@ export class SearchBar extends React.Component<Record<string, never>, SearchBarS
             placeholder="Search bar design guide"
           />
         </div>
-        <button className={styles.btnOutlined} type="button">
-          Search
-        </button>
+        <ButtonOutlined className={styles.btnOutlined}>Search</ButtonOutlined>
       </div>
     );
   }
