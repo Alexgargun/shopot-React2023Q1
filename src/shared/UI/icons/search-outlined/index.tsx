@@ -1,8 +1,10 @@
+import React from 'react';
+
 export interface ISearchOutlinedProps extends React.ComponentPropsWithoutRef<'svg'> {
   specialProp?: string;
 }
 
-export const SearchOutlined = (props: ISearchOutlinedProps) => {
+const SearchOutlined = (props: ISearchOutlinedProps) => {
   const { ...rest } = props;
 
   return (
@@ -20,3 +22,5 @@ export const SearchOutlined = (props: ISearchOutlinedProps) => {
     </svg>
   );
 };
+
+export default SearchOutlined;
