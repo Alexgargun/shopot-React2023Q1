@@ -1,18 +1,22 @@
 import React from 'react';
+import { TypeRoute } from 'shared/types';
 import { Footer } from 'widgets/footer';
 import { Navbar } from 'widgets/navbar';
 
-interface IPageContainerProps {
+type TypePageContainerProps = {
   headerText: string;
-  content?: React.ReactNode;
-}
+  content: React.ReactNode;
+  routes: TypeRoute[];
+};
 
-export default class PageContainer extends React.Component<IPageContainerProps> {
+export default class PageContainer extends React.Component<TypePageContainerProps> {
   render(): React.ReactNode {
+    const { routes, headerText, content } = this.props;
+
     return (
       <>
-        <Navbar headerText={this.props.headerText} />
-        {this.props.content}
+        <Navbar routes={routes} headerText={headerText} />
+        {content}
         <Footer />
       </>
     );
