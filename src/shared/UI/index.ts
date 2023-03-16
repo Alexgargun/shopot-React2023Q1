@@ -1,1 +1,2 @@
-export * from './SearchOutlined';
+export * from './buttons';
+export * from './icons';
