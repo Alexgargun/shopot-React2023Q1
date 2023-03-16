@@ -1,1 +1,1 @@
-export * from './SearchOutlined';
+export { default as SearchOutlined } from './search-outlined';
