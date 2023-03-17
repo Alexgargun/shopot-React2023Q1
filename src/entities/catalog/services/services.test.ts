@@ -1,4 +1,6 @@
+import { describe, expect, it } from 'vitest';
 import { catalogService } from 'entities/catalog';
+
 /**
  * @vitest-environment jsdom
  */
