@@ -1,5 +1,5 @@
 import { CardList, catalogService, TypeCard } from 'entities/catalog';
-import { SearchBar } from 'features/search-bar/ui';
+import { SearchBar } from 'features/search-bar';
 import React from 'react';
 
 interface IMainPageState {
