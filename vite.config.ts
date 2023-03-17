@@ -2,7 +2,7 @@
 /// <reference types="vite/client" />
 
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { configDefaults, defineConfig } from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import * as path from 'path';
 
@@ -16,7 +16,9 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      all: false,
+      exclude: [...configDefaults.coverage.exclude, 'src/shared/types', 'src/main.tsx'],
+      all: true,
+      src: ['src'],
       provider: 'c8',
       reporter: ['text'],
     },
