@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { TypeCard } from 'entities/catalog/types';
-import Card from '../card';
+import { TypeCard, Card } from 'entities/catalog';
 
 interface CardListProps {
   cards: TypeCard[];
