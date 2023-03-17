@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, ReactNode } from 'react';
 import styles from './styles.module.scss';
 import { TypeCard, Card } from 'entities/catalog';
 
@@ -10,8 +10,8 @@ interface CardListState {
   cards: TypeCard[];
 }
 
-export default class CardList extends React.Component<CardListProps, CardListState> {
-  render(): React.ReactNode {
+export default class CardList extends Component<CardListProps, CardListState> {
+  render(): ReactNode {
     if (this.props.cards.length === 0) {
       return <div className="text-center">No data</div>;
     }

@@ -1,9 +1,9 @@
 import Routing from 'pages';
-import React from 'react';
+import { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <BrowserRouter>

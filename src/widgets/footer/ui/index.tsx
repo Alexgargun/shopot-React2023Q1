@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component, ReactNode } from 'react';
 import rsschoolLogo from '@/assets/images/rsschool-js-logo.webp';
 import styles from './styles.module.scss';
 
-export default class Footer extends React.Component {
-  render(): React.ReactNode {
+export default class Footer extends Component {
+  render(): ReactNode {
     return (
       <div className={styles.footer}>
         <div className={styles.footerInner}>

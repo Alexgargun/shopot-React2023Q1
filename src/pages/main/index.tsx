@@ -1,12 +1,12 @@
+import { Component, ReactNode } from 'react';
 import { CardList, catalogService, TypeCard } from 'entities/catalog';
 import { SearchBar } from 'features/search-bar';
-import React from 'react';
 
 interface IMainPageState {
   cards: TypeCard[];
 }
 
-class MainPage extends React.Component<Record<string, never>, IMainPageState> {
+class MainPage extends Component<Record<string, never>, IMainPageState> {
   constructor(props: Record<string, never>) {
     super(props);
 
@@ -27,7 +27,7 @@ class MainPage extends React.Component<Record<string, never>, IMainPageState> {
     this.setState({ cards: cards });
   }
 
-  render() {
+  render(): ReactNode {
     return (
       <div className="container">
         <h1 className="text-center">Main page</h1>

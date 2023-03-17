@@ -1,6 +1,6 @@
-import React from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-export interface ISearchOutlinedProps extends React.ComponentPropsWithoutRef<'svg'> {
+export interface ISearchOutlinedProps extends ComponentPropsWithoutRef<'svg'> {
   specialProp?: string;
 }
 

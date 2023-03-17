@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, ReactNode } from 'react';
 import styles from './styles.module.scss';
 import { TypeCard } from 'entities/catalog/types';
 
@@ -8,8 +8,8 @@ interface ICardProps {
 
 type TypeCardState = TypeCard;
 
-export default class Card extends React.Component<ICardProps, TypeCardState> {
-  render(): React.ReactNode {
+export default class Card extends Component<ICardProps, TypeCardState> {
+  render(): ReactNode {
     const { title, owner, image, views, likes, addedAt } = this.props.card;
 
     return (

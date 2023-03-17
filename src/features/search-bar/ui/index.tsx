@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent, Component, ReactNode } from 'react';
 import { getSearchValue, setSearchValue } from 'shared/lib';
 import { Button, SearchOutlined } from 'shared/ui';
 
@@ -7,7 +7,7 @@ interface SearchBarState {
   search: string;
 }
 
-export default class SearchBar extends React.Component<Record<string, never>, SearchBarState> {
+export default class SearchBar extends Component<Record<string, never>, SearchBarState> {
   constructor(props: Record<string, never>) {
     super(props);
 
@@ -32,7 +32,7 @@ export default class SearchBar extends React.Component<Record<string, never>, Se
     }
   }
 
-  render(): React.ReactNode {
+  render(): ReactNode {
     return (
       <div className={styles.wrapper}>
         <div className={styles.searchInputWrapper}>
