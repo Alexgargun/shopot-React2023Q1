@@ -1,6 +1,5 @@
-export const enum TypeRoute {
-  Index = '/index.html',
-  Main = '/',
-  About = '/about',
-  NotFound = '*',
-}
+export type TypeRoute = {
+  title: string;
+  path: string;
+  key: string;
+};
