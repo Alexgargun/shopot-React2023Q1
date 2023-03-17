@@ -31,6 +31,12 @@
   border-radius: 4px;
   width: 100%;
   max-width: 300px;
+
+  &:focus,
+  &:active {
+    background-color: rgba(25, 118, 210, 0.04);
+    border: 1px solid rgb(25, 118, 210);
+  }
 }
 
 @media screen and (max-width: 575.98px) {
