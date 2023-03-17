@@ -43,6 +43,7 @@ export default class SearchBar extends React.Component<Record<string, never>, Se
             className={styles.searchInput}
             type="text"
             placeholder="Search bar design guide"
+            aria-label="search-bar-input"
           />
         </div>
         <Button type="button">Search</Button>
