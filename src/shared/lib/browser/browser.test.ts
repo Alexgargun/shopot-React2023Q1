@@ -2,6 +2,10 @@ import { getSearchValue, setSearchValue } from 'shared/lib';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { LOCAL_STORAGE_SEARCH_KEY } from './config';
 
+/**
+ * https://amitd.co/code/testing/spying-on-localstorage-in-jest
+ */
+
 const matchStringValue1 = 'test-search-value-1';
 const matchStringValue2 = 'test-search-value-2';
 
