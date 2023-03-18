@@ -1,5 +1,5 @@
 import { Component, ReactNode } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { TypeRoute } from 'shared/types';
 import { PageContainer } from 'widgets/page-container';
 import AboutPage from './about';
@@ -12,6 +12,7 @@ export const enum RouteEndpoint {
   Main = '/',
   Forms = '/forms',
   About = '/about',
+  Error404 = '/404',
   NotFound = '*',
 }
 
@@ -48,8 +49,12 @@ export default class Routing extends Component {
           element={<PageContainer routes={routes} headerText="About Us" content={<AboutPage />} />}
         />
         <Route
-          path={RouteEndpoint.NotFound}
+          path={RouteEndpoint.Error404}
           element={<PageContainer routes={routes} headerText="404" content={<Error404 />} />}
+        />
+        <Route
+          path={RouteEndpoint.NotFound}
+          element={<Navigate to={RouteEndpoint.Error404} replace />}
         />
       </Routes>
     );
