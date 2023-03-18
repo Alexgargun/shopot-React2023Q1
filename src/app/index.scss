@@ -18,6 +18,11 @@ body {
   text-align: center;
 }
 
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
 .flex-center {
   justify-content: center;
 }
