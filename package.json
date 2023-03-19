@@ -1,8 +1,19 @@
 {
-  "name": "react-components",
+  "name": "shopot-react2023Q1",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": {
+    "name": "Konstantin Sapronv",
+    "email": "ks.costas@gmail.com",
+    "url": "https://github.com/shopot"
+  },
+  "description": "RS School React Course repository for @shopot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopot/shopot-React2023Q1"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
