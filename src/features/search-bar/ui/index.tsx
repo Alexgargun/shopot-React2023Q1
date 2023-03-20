@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import { ChangeEvent, Component, ReactNode } from 'react';
-import { getSearchValue, setSearchValue } from 'shared/lib';
+import { getSearchValue, setSearchValue } from 'shared/libs';
 import { Button, SearchOutlined } from 'shared/ui';
 
 interface SearchBarState {
