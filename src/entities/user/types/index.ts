@@ -1,1 +1,3 @@
-export { default as IElementProps } from './IElementProps';
+export * from './IElementProps';
+export * from './TypeUser';
+export * from './TypeErrors';
