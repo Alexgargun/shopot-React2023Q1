@@ -1,1 +1,1 @@
-export type TypeFormValue = string | string[] | HTMLImageElement | null;
+export type TypeFormValue = string | string[] | File | null;
