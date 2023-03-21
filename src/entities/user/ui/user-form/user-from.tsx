@@ -2,18 +2,13 @@ import styles from './styles.module.scss';
 import { Component, createRef, FormEvent, ReactNode, RefObject } from 'react';
 import { Button } from 'shared/ui';
 import {
-  avatarValidator,
-  dateOfBirthValidator,
-  emailValidator,
   FieldDateOfBirth,
   FieldEmail,
   FieldFullName,
   FieldPreferCity,
-  fullNameValidator,
-  positionValidator,
-  preferCityValidator,
-  programmingWithValidator,
+  formDataValidator,
   TypeErrors,
+  TypeFormValue,
   TypeUser,
 } from 'entities/user';
 import { initialUserFrom } from './user-form.initial';
@@ -60,27 +55,16 @@ export default class UserForm extends Component<IUserFormProps, IUserFormsState>
     this.isFirstSubmit = true;
   }
 
-  updateFieldValue(data: { [key: string]: string | string[] }) {
+  updateFieldValue(data: { [key: string]: TypeFormValue }) {
     this.setState((prevState: IUserFormsState) => ({
       data: { ...prevState.data, ...data },
     }));
   }
 
   validateForm(): boolean {
-    const { fullName, email, dateOfBirth, preferCity, programming, position, avatar } =
-      this.state.data;
+    const errors = formDataValidator({ ...this.state.data });
 
-    const errors = {
-      fullName: fullNameValidator(fullName),
-      email: emailValidator(email),
-      dateOfBirth: dateOfBirthValidator(dateOfBirth),
-      preferCity: preferCityValidator(preferCity),
-      programming: programmingWithValidator(programming),
-      position: positionValidator(position),
-      avatar: avatarValidator(avatar),
-    };
-
-    this.setState({ errors: errors });
+    this.setState({ errors });
 
     return Array.from(Object.values(errors)).reduce((res: boolean, error: string) => {
       return error !== '' ? false : res;
@@ -89,10 +73,12 @@ export default class UserForm extends Component<IUserFormProps, IUserFormsState>
 
   handleFormSubmit(e: FormEvent): void {
     e.preventDefault();
+
     this.isFirstSubmit = false;
 
     if (this.validateForm()) {
-      console.log('this.validateForm() = true');
+      this.props.addUser(this.state.data);
+      this.resetFrom();
     }
   }
 
