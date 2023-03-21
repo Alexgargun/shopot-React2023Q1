@@ -29,7 +29,7 @@ export default class FieldAvatar extends Component<IElementProps> {
           <label className={styles.formLabel}>Avatar</label>
           <input
             ref={this.inputRef}
-            onChange={() => this.handleOnChange()}
+            onInput={() => this.handleOnChange()}
             name="fieldAvatar"
             aria-label="input-avatar"
             className={styles.formInput}

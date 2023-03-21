@@ -37,7 +37,7 @@ export default class FieldProgramming extends Component<IElementProps> {
             return (
               <label className={styles.formLabel} key={item.id}>
                 <input
-                  onChange={(e: FormEvent) => this.handleOnChange(e)}
+                  onInput={(e: FormEvent) => this.handleOnChange(e)}
                   name={`fieldProgramming-${item.id}`}
                   id={`fieldProgramming-${item.id}`}
                   aria-label="input-programming"

@@ -18,7 +18,7 @@ export default class FieldPosition extends Component<IElementProps> {
             return (
               <label className={styles.formLabel} key={position}>
                 <input
-                  onChange={() => this.handleOnChange(position)}
+                  onInput={() => this.handleOnChange(position)}
                   name="fieldPosition"
                   id={`fieldPosition${position}`}
                   aria-label="input-programming"
