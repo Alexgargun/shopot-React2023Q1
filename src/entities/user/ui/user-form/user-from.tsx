@@ -84,58 +84,56 @@ export default class UserForm extends Component<IUserFormProps, IUserFormsState>
 
   render(): ReactNode {
     return (
-      <div className="container">
-        <div className={styles.formWrapper}>
-          <form
-            ref={this.formRef}
-            onSubmit={(e: FormEvent) => this.handleFormSubmit(e)}
-            onChange={() => this.handleFormChange()}
-          >
-            <div className={styles.formRow}>
-              <FieldFullName
-                error={this.state.errors.fullName}
-                onChange={(value) => this.updateFieldValue({ fullName: value })}
-              />
-              <FieldEmail
-                error={this.state.errors.email}
-                onChange={(value) => this.updateFieldValue({ email: value })}
-              />
-            </div>
-            <div className={styles.formRow}>
-              <FieldDateOfBirth
-                error={this.state.errors.dateOfBirth}
-                onChange={(value) => this.updateFieldValue({ dateOfBirth: value })}
-              />
-              <FieldPreferCity
-                error={this.state.errors.preferCity}
-                onChange={(value) => this.updateFieldValue({ preferCity: value })}
-              />
-            </div>
-            <div className={styles.formRow}>
-              <FieldProgramming
-                error={this.state.errors.programming}
-                onChange={(value) => this.updateFieldValue({ programming: value })}
-              />
-              <FieldPosition
-                error={this.state.errors.position}
-                onChange={(value) => this.updateFieldValue({ position: value })}
-              />
-            </div>
-            <div className={styles.formRow}>
-              <FieldAvatar
-                error={this.state.errors.avatar}
-                onChange={(value) => this.updateFieldValue({ avatar: value })}
-              />
-            </div>
+      <div className={styles.formWrapper}>
+        <form
+          ref={this.formRef}
+          onSubmit={(e: FormEvent) => this.handleFormSubmit(e)}
+          onChange={() => this.handleFormChange()}
+        >
+          <div className={styles.formRow}>
+            <FieldFullName
+              error={this.state.errors.fullName}
+              onChange={(value) => this.updateFieldValue({ fullName: value })}
+            />
+            <FieldEmail
+              error={this.state.errors.email}
+              onChange={(value) => this.updateFieldValue({ email: value })}
+            />
+          </div>
+          <div className={styles.formRow}>
+            <FieldDateOfBirth
+              error={this.state.errors.dateOfBirth}
+              onChange={(value) => this.updateFieldValue({ dateOfBirth: value })}
+            />
+            <FieldPreferCity
+              error={this.state.errors.preferCity}
+              onChange={(value) => this.updateFieldValue({ preferCity: value })}
+            />
+          </div>
+          <div className={styles.formRow}>
+            <FieldProgramming
+              error={this.state.errors.programming}
+              onChange={(value) => this.updateFieldValue({ programming: value })}
+            />
+            <FieldPosition
+              error={this.state.errors.position}
+              onChange={(value) => this.updateFieldValue({ position: value })}
+            />
+          </div>
+          <div className={styles.formRow}>
+            <FieldAvatar
+              error={this.state.errors.avatar}
+              onChange={(value) => this.updateFieldValue({ avatar: value })}
+            />
+          </div>
 
-            <div className={`${styles.formRow} flex-center`}>
-              <Button variant="primary">Send</Button>
-              <Button type="button" onClick={() => this.resetFrom()}>
-                Reset
-              </Button>
-            </div>
-          </form>
-        </div>
+          <div className={`${styles.formRow} flex-center`}>
+            <Button variant="primary">Send</Button>
+            <Button type="button" onClick={() => this.resetFrom()}>
+              Reset
+            </Button>
+          </div>
+        </form>
       </div>
     );
   }
