@@ -56,3 +56,11 @@ export const positionValidator = (position: string): string => {
 
   return '';
 };
+
+export const avatarValidator = (avatar: string): string => {
+  if (!avatar) {
+    return 'The avatar picture must be an image';
+  }
+
+  return '';
+};
