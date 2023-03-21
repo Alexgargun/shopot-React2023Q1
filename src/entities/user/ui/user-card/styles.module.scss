@@ -1,0 +1,37 @@
+.card {
+  border-radius: 5px;
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  padding: 20px;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #fcfcfc;
+
+}
+
+.fullName {
+  font-weight: 700;
+  text-align: center;
+}
+
+.email {
+  text-align: center;
+  color: gray;
+}
+
+.dateOfBirth,
+.preferCity,
+.programming,
+.position {
+  span {
+    color: gray;
+  }
+}
+
+.avatar {
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
