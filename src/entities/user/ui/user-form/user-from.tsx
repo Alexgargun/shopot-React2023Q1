@@ -13,6 +13,8 @@ import {
   positionValidator,
   preferCityValidator,
   programmingWithValidator,
+  TypeErrors,
+  TypeUser,
 } from 'entities/user';
 import { initialUserFrom } from './user-form.initial';
 import FieldProgramming from './field-programming';
@@ -21,24 +23,27 @@ import { debounce } from 'shared/helpers';
 import FieldAvatar from './field-avatar';
 
 interface IUserFormsState {
-  data: typeof initialUserFrom.data;
-  errors: typeof initialUserFrom.errors;
+  data: TypeUser;
+  errors: TypeErrors;
 }
 
-type TypeUserFormProps = Record<string, never>;
+interface IUserFormProps {
+  addUser: (user: TypeUser) => void;
+}
 
-export default class UserForm extends Component<TypeUserFormProps, IUserFormsState> {
+export default class UserForm extends Component<IUserFormProps, IUserFormsState> {
   private static UPDATE_DELAY = 500;
   private formRef: RefObject<HTMLFormElement>;
   private isFirstSubmit: boolean;
   private debounceTimeout: { timeout: ReturnType<typeof setTimeout> | null };
 
-  constructor(props: TypeUserFormProps) {
+  constructor(props: IUserFormProps) {
     super(props);
+    const { data, errors } = initialUserFrom;
 
     this.formRef = createRef<HTMLFormElement>();
     this.isFirstSubmit = true;
-    this.state = { data: { ...initialUserFrom.data }, errors: { ...initialUserFrom.errors } };
+    this.state = { data: { ...data }, errors: { ...errors } };
     this.debounceTimeout = { timeout: null };
   }
 
@@ -50,7 +55,8 @@ export default class UserForm extends Component<TypeUserFormProps, IUserFormsSta
 
   resetFrom(): void {
     this.formRef.current?.reset();
-    this.setState({ data: { ...initialUserFrom.data }, errors: { ...initialUserFrom.errors } });
+    const { data, errors } = initialUserFrom;
+    this.setState({ data: { ...data }, errors: { ...errors } });
     this.isFirstSubmit = true;
   }
 
