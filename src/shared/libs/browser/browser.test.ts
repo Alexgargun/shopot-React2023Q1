@@ -1,6 +1,7 @@
-import { getSearchValue, setSearchValue } from 'shared/lib';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { LOCAL_STORAGE_SEARCH_KEY } from './config';
+import getSearchValue from './get-search-value';
+import setSearchValue from './set-search-value';
 
 /**
  * https://amitd.co/code/testing/spying-on-localstorage-in-jest
