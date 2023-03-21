@@ -6,6 +6,7 @@ export const initialUserFrom = {
     preferCity: '',
     programming: [],
     position: '',
+    avatar: '',
   },
   errors: {
     fullName: '',
@@ -14,5 +15,6 @@ export const initialUserFrom = {
     preferCity: '',
     programming: '',
     position: '',
+    avatar: '',
   },
 };

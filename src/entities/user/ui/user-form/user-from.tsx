@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import { Component, createRef, FormEvent, ReactNode, RefObject } from 'react';
 import { Button } from 'shared/ui';
 import {
+  avatarValidator,
   dateOfBirthValidator,
   emailValidator,
   FieldDateOfBirth,
@@ -17,6 +18,7 @@ import { initialUserFrom } from './user-form.initial';
 import FieldProgramming from './field-programming';
 import FieldPosition from './field-position';
 import { debounce } from 'shared/helpers';
+import FieldAvatar from './field-avatar';
 
 interface IUserFormsState {
   data: typeof initialUserFrom.data;
@@ -59,7 +61,8 @@ export default class UserForm extends Component<TypeUserFormProps, IUserFormsSta
   }
 
   validateForm(): boolean {
-    const { fullName, email, dateOfBirth, preferCity, programming, position } = this.state.data;
+    const { fullName, email, dateOfBirth, preferCity, programming, position, avatar } =
+      this.state.data;
 
     const errors = {
       fullName: fullNameValidator(fullName),
@@ -68,6 +71,7 @@ export default class UserForm extends Component<TypeUserFormProps, IUserFormsSta
       preferCity: preferCityValidator(preferCity),
       programming: programmingWithValidator(programming),
       position: positionValidator(position),
+      avatar: avatarValidator(avatar),
     };
 
     this.setState({ errors: errors });
@@ -125,6 +129,13 @@ export default class UserForm extends Component<TypeUserFormProps, IUserFormsSta
                 onChange={(value) => this.updateFieldValue({ position: value })}
               />
             </div>
+            <div className={styles.formRow}>
+              <FieldAvatar
+                error={this.state.errors.avatar}
+                onChange={(value) => this.updateFieldValue({ avatar: value })}
+              />
+            </div>
+
             <div className={`${styles.formRow} flex-center`}>
               <Button variant="primary">Send</Button>
               <Button type="button" onClick={() => this.resetFrom()}>
