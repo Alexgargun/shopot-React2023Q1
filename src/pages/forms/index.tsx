@@ -1,13 +1,13 @@
-import UserContainer from 'features/user-form-container';
+import UserContainer from 'features/user-container';
 import { Component, ReactNode } from 'react';
 
 export default class FormsPage extends Component {
   render(): ReactNode {
     return (
-      <>
+      <div className="container">
         <h1 className="text-center">React Forms</h1>
         <UserContainer />
-      </>
+      </div>
     );
   }
 }
