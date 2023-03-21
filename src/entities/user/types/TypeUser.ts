@@ -5,5 +5,5 @@ export type TypeUser = {
   preferCity: string;
   programming: string[];
   position: string;
-  avatar: string;
+  avatar: HTMLImageElement | null;
 };

@@ -1,4 +1,6 @@
+import { TypeFormValue } from './TypeFormValue';
+
 export interface IElementProps {
-  onChange: (value: string | string[]) => void;
+  onChange: (value: TypeFormValue) => void;
   error: string;
 }
