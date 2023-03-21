@@ -1,3 +1,5 @@
+import { TypeErrors, TypeUser } from 'entities/user/types';
+
 export const fullNameValidator = (firstName: string) => {
   if (!firstName) {
     return 'Full Name is required';
@@ -57,10 +59,36 @@ export const positionValidator = (position: string): string => {
   return '';
 };
 
-export const avatarValidator = (avatar: string): string => {
-  if (!avatar) {
-    return 'The avatar picture must be an image';
+export const avatarValidator = (avatar: HTMLImageElement | null): string => {
+  if (!avatar || avatar instanceof HTMLImageElement === false) {
+    return 'The avatar picture must be an image (jpeg, png, webp)';
   }
 
   return '';
+};
+
+export const imageFileTypeValidator = (file: File): boolean => {
+  const fileTypes = ['image/png', 'image/jpeg', 'image/webp', 'image/x-png'];
+
+  return fileTypes.includes(file.type);
+};
+
+export const formDataValidator = ({
+  fullName,
+  email,
+  dateOfBirth,
+  preferCity,
+  programming,
+  position,
+  avatar,
+}: TypeUser): TypeErrors => {
+  return {
+    fullName: fullNameValidator(fullName),
+    email: emailValidator(email),
+    dateOfBirth: dateOfBirthValidator(dateOfBirth),
+    preferCity: preferCityValidator(preferCity),
+    programming: programmingWithValidator(programming),
+    position: positionValidator(position),
+    avatar: avatarValidator(avatar),
+  };
 };
