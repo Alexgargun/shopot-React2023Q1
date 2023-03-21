@@ -30,6 +30,7 @@ export default class FieldFullName extends Component<IElementProps> {
           className={styles.formInput}
           type="text"
           placeholder="Martin Fowler"
+          tabIndex={1}
         />
         <div className={styles.invalidFeedback}>{this.props.error}</div>
       </div>

@@ -31,6 +31,7 @@ export default class FieldDateOfBirth extends Component<IElementProps> {
           type="date"
           min="1960-01-01"
           max="2007-12-31"
+          tabIndex={3}
         />
         <div className={styles.invalidFeedback}>{this.props.error}</div>
       </div>

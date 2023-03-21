@@ -30,6 +30,7 @@ export default class FieldEmail extends Component<IElementProps> {
           className={styles.formInput}
           type="text"
           placeholder="email@example.com"
+          tabIndex={2}
         />
         <div className={styles.invalidFeedback}>{this.props.error}</div>
       </div>

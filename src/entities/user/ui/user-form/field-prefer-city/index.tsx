@@ -28,6 +28,7 @@ export default class FieldPreferCity extends Component<IElementProps> {
           name="fieldPreferCity"
           aria-label="input-prefer-city"
           className={styles.formSelect}
+          tabIndex={4}
         >
           <option value="-">-- Select --</option>
           <option value="Bangkok">Bangkok</option>
