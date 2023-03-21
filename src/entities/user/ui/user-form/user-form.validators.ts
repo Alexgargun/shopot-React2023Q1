@@ -8,7 +8,7 @@ export const fullNameValidator = (firstName: string) => {
     firstName.charAt(0) !== firstName.charAt(0).toUpperCase() ||
     !/[a-zA-Z_0-9а-яА-Я]{3,} [a-zA-Z_0-9а-яА-Я]{3,}$/.test(firstName)
   ) {
-    return 'Incorrect input full name ';
+    return 'Incorrect input full name';
   }
 
   return '';
