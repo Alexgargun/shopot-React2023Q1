@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { FieldDateOfBirth, TypeFormValue } from 'entities/user';
-import { describe, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 const mockOnChange = vi.fn((value: TypeFormValue) => value);
 
