@@ -40,7 +40,7 @@ export default class FieldProgramming extends Component<IElementProps> {
                   onInput={(e: FormEvent) => this.handleOnChange(e)}
                   name={`fieldProgramming-${item.id}`}
                   id={`fieldProgramming-${item.id}`}
-                  aria-label="input-programming"
+                  aria-label={`input-programming-${item.id}`}
                   className={styles.formInput}
                   type="checkbox"
                   value={item.id}
