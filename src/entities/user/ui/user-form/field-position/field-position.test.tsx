@@ -22,5 +22,6 @@ describe('Test FieldPosition', () => {
     expect(input).not.toBeChecked();
     fireEvent.click(input);
     expect(input).toBeChecked();
+    expect(mockOnChange).toBeCalledTimes(1);
   });
 });
