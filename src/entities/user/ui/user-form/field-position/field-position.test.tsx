@@ -1,12 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { TypeFormValue } from 'entities/user';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import FieldPosition from '.';
 
-const mockOnChange = vi.fn((value: TypeFormValue) => value);
-
 const setup = () => {
-  const utils = render(<FieldPosition error="" onChange={mockOnChange} />);
+  const utils = render(<FieldPosition error="" />);
   const input = screen.getByLabelText('input-position-Junior') as HTMLInputElement;
 
   return {
@@ -22,6 +19,5 @@ describe('Test FieldPosition', () => {
     expect(input).not.toBeChecked();
     fireEvent.click(input);
     expect(input).toBeChecked();
-    expect(mockOnChange).toBeCalledTimes(1);
   });
 });

@@ -1,31 +1,31 @@
 import styles from '../styles.module.scss';
-import { Component, FormEvent, ReactNode } from 'react';
+import { Component, createRef, ReactNode, RefObject } from 'react';
 import { IElementProps } from 'entities/user/types';
 import programming from 'entities/user/data/programming.json';
 
 export default class FieldProgramming extends Component<IElementProps> {
-  private checkedState: string[];
+  private inputRefs: RefObject<HTMLInputElement>[];
 
   constructor(props: IElementProps) {
     super(props);
 
-    this.checkedState = [];
+    this.inputRefs = [];
+
+    programming.forEach(() => {
+      this.inputRefs.push(createRef<HTMLInputElement>());
+    });
   }
 
-  handleOnChange(e: FormEvent): void {
-    const { target } = e;
+  getValue(): string[] {
+    const results: string[] = [];
 
-    if (target instanceof HTMLInputElement) {
-      const filtered = this.checkedState.filter((item) => item !== target.value);
-
-      if (target.checked) {
-        filtered.push(target.value);
+    this.inputRefs.forEach((ref) => {
+      if (ref.current?.checked) {
+        results.push(ref.current.value);
       }
+    });
 
-      this.checkedState = [...filtered];
-    }
-
-    this.props.onChange(this.checkedState);
+    return results;
   }
 
   render(): ReactNode {
@@ -33,11 +33,11 @@ export default class FieldProgramming extends Component<IElementProps> {
       <div className={styles.formControl} data-invalid={this.props.error !== ''}>
         <h3 className={styles.formHeader}>Programming with</h3>
         <div className="flex">
-          {programming.map((item) => {
+          {programming.map((item, index) => {
             return (
               <label className={styles.formLabel} key={item.id}>
                 <input
-                  onInput={(e: FormEvent) => this.handleOnChange(e)}
+                  ref={this.inputRefs[index]}
                   name={`fieldProgramming-${item.id}`}
                   id={`fieldProgramming-${item.id}`}
                   aria-label={`input-programming-${item.id}`}

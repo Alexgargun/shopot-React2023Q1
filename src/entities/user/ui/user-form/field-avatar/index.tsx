@@ -11,15 +11,15 @@ export default class FieldAvatar extends Component<IElementProps> {
     this.inputRef = createRef<HTMLInputElement>();
   }
 
-  handleOnChange(): void {
+  getValue(): File | null {
     const files = this.inputRef.current?.files || [];
     const selectedFiles = [...[...files]];
 
     if (selectedFiles.length > 0) {
-      this.props.onChange(selectedFiles[0]);
-    } else {
-      this.props.onChange(null);
+      return selectedFiles[0];
     }
+
+    return null;
   }
 
   render(): ReactNode {
@@ -29,7 +29,6 @@ export default class FieldAvatar extends Component<IElementProps> {
           <label className={styles.formLabel}>Avatar</label>
           <input
             ref={this.inputRef}
-            onInput={() => this.handleOnChange()}
             name="fieldAvatar"
             aria-label="input-avatar"
             className={styles.formInput}

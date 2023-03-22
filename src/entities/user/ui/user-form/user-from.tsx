@@ -8,17 +8,14 @@ import {
   FieldPreferCity,
   formDataValidator,
   TypeErrors,
-  TypeFormValue,
   TypeUser,
 } from 'entities/user';
 import { initialUserFrom } from './user-form.initial';
 import FieldProgramming from './field-programming';
 import FieldPosition from './field-position';
-import { debounce } from 'shared/helpers';
 import FieldAvatar from './field-avatar';
 
 interface IUserFormsState {
-  data: TypeUser;
   errors: TypeErrors;
 }
 
@@ -27,57 +24,71 @@ interface IUserFormProps {
 }
 
 export default class UserForm extends Component<IUserFormProps, IUserFormsState> {
-  private static UPDATE_DELAY = 500;
   private formRef: RefObject<HTMLFormElement>;
-  private isFirstSubmit: boolean;
-  private debounceTimeout: { timeout: ReturnType<typeof setTimeout> | null };
+  private form: {
+    fullName: RefObject<FieldFullName>;
+    email: RefObject<FieldEmail>;
+    dateOfBirth: RefObject<FieldDateOfBirth>;
+    preferCity: RefObject<FieldPreferCity>;
+    programming: RefObject<FieldProgramming>;
+    position: RefObject<FieldPosition>;
+    avatar: RefObject<FieldAvatar>;
+  };
 
   constructor(props: IUserFormProps) {
     super(props);
-    const { data, errors } = initialUserFrom;
 
     this.formRef = createRef<HTMLFormElement>();
-    this.isFirstSubmit = true;
-    this.state = { data: { ...data }, errors: { ...errors } };
-    this.debounceTimeout = { timeout: null };
-  }
+    this.form = {
+      fullName: createRef<FieldFullName>(),
+      email: createRef<FieldEmail>(),
+      dateOfBirth: createRef<FieldDateOfBirth>(),
+      preferCity: createRef<FieldPreferCity>(),
+      programming: createRef<FieldProgramming>(),
+      position: createRef<FieldPosition>(),
+      avatar: createRef<FieldAvatar>(),
+    };
 
-  handleFormChange(): void {
-    if (!this.isFirstSubmit) {
-      debounce(() => this.validateForm(), this.debounceTimeout, UserForm.UPDATE_DELAY);
-    }
+    this.state = { errors: { ...initialUserFrom.errors } };
   }
 
   resetFrom(): void {
     this.formRef.current?.reset();
-    const { data, errors } = initialUserFrom;
-    this.setState({ data: { ...data }, errors: { ...errors } });
-    this.isFirstSubmit = true;
+    this.setState({ errors: { ...initialUserFrom.errors } });
   }
 
-  updateFieldValue(data: { [key: string]: TypeFormValue }) {
-    this.setState((prevState: IUserFormsState) => ({
-      data: { ...prevState.data, ...data },
-    }));
-  }
-
-  validateForm(): boolean {
-    const errors = formDataValidator({ ...this.state.data });
+  validateForm(): TypeUser | null {
+    const data: TypeUser = {
+      fullName: this.form.fullName.current?.getValue() || '',
+      email: this.form.email.current?.getValue() || '',
+      dateOfBirth: this.form.dateOfBirth.current?.getValue() || '',
+      preferCity: this.form.preferCity.current?.getValue() || '',
+      programming: this.form.programming.current?.getValue() || [],
+      position: this.form.position.current?.getValue() || '',
+      avatar: this.form.avatar.current?.getValue() || null,
+    };
+    const errors = formDataValidator(data);
 
     this.setState({ errors });
 
-    return Array.from(Object.values(errors)).reduce((res: boolean, error: string) => {
+    const isValid = Array.from(Object.values(errors)).reduce((res: boolean, error: string) => {
       return error !== '' ? false : res;
     }, true);
+
+    if (isValid) {
+      return data;
+    }
+
+    return null;
   }
 
   handleFormSubmit(e: FormEvent): void {
     e.preventDefault();
 
-    this.isFirstSubmit = false;
+    const data = this.validateForm();
 
-    if (this.validateForm()) {
-      this.props.addUser(this.state.data);
+    if (data !== null) {
+      this.props.addUser(data);
       this.resetFrom();
     }
   }
@@ -85,51 +96,27 @@ export default class UserForm extends Component<IUserFormProps, IUserFormsState>
   render(): ReactNode {
     return (
       <div className={styles.formWrapper}>
-        <form
-          ref={this.formRef}
-          onSubmit={(e: FormEvent) => this.handleFormSubmit(e)}
-          onChange={() => this.handleFormChange()}
-        >
+        <form ref={this.formRef} onSubmit={(e: FormEvent) => this.handleFormSubmit(e)}>
           <div className={styles.formRow}>
-            <FieldFullName
-              error={this.state.errors.fullName}
-              onChange={(value) => this.updateFieldValue({ fullName: value })}
-            />
-            <FieldEmail
-              error={this.state.errors.email}
-              onChange={(value) => this.updateFieldValue({ email: value })}
-            />
+            <FieldFullName error={this.state.errors.fullName} ref={this.form.fullName} />
+            <FieldEmail error={this.state.errors.email} ref={this.form.email} />
           </div>
           <div className={styles.formRow}>
-            <FieldDateOfBirth
-              error={this.state.errors.dateOfBirth}
-              onChange={(value) => this.updateFieldValue({ dateOfBirth: value })}
-            />
-            <FieldPreferCity
-              error={this.state.errors.preferCity}
-              onChange={(value) => this.updateFieldValue({ preferCity: value })}
-            />
+            <FieldDateOfBirth error={this.state.errors.dateOfBirth} ref={this.form.dateOfBirth} />
+            <FieldPreferCity error={this.state.errors.preferCity} ref={this.form.preferCity} />
           </div>
           <div className={styles.formRow}>
-            <FieldProgramming
-              error={this.state.errors.programming}
-              onChange={(value) => this.updateFieldValue({ programming: value })}
-            />
-            <FieldPosition
-              error={this.state.errors.position}
-              onChange={(value) => this.updateFieldValue({ position: value })}
-            />
+            <FieldProgramming error={this.state.errors.programming} ref={this.form.programming} />
+            <FieldPosition error={this.state.errors.position} ref={this.form.position} />
           </div>
           <div className={styles.formRow}>
-            <FieldAvatar
-              error={this.state.errors.avatar}
-              onChange={(value) => this.updateFieldValue({ avatar: value })}
-            />
+            <FieldAvatar error={this.state.errors.avatar} ref={this.form.avatar} />
           </div>
-
           <div className={`${styles.formRow} flex-center`}>
-            <Button variant="primary">Send</Button>
-            <Button type="button" onClick={() => this.resetFrom()}>
+            <Button variant="primary" aria-label="button-submit">
+              Send
+            </Button>
+            <Button type="button" onClick={() => this.resetFrom()} aria-label="button-reset">
               Reset
             </Button>
           </div>

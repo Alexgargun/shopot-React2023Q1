@@ -11,8 +11,8 @@ export default class FieldEmail extends Component<IElementProps> {
     this.inputRef = createRef<HTMLInputElement>();
   }
 
-  handleOnChange(): void {
-    this.props.onChange(this.inputRef.current?.value || '');
+  getValue(): string {
+    return this.inputRef.current?.value || '';
   }
 
   render(): ReactNode {
@@ -23,7 +23,6 @@ export default class FieldEmail extends Component<IElementProps> {
         </label>
         <input
           ref={this.inputRef}
-          onInput={() => this.handleOnChange()}
           id="fieldEmail"
           name="fieldEmail"
           aria-label="input-email"

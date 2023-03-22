@@ -1,11 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { FieldPreferCity, TypeFormValue } from 'entities/user';
-import { describe, expect, it, vi } from 'vitest';
-
-const mockOnChange = vi.fn((value: TypeFormValue) => value);
+import { FieldPreferCity } from 'entities/user';
+import { describe, expect, it } from 'vitest';
 
 const setup = () => {
-  const utils = render(<FieldPreferCity error="" onChange={mockOnChange} />);
+  const utils = render(<FieldPreferCity error="" />);
   const input = screen.getByLabelText('input-prefer-city') as HTMLSelectElement;
 
   return {

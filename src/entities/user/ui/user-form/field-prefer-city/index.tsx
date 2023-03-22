@@ -11,8 +11,8 @@ export default class FieldPreferCity extends Component<IElementProps> {
     this.inputRef = createRef<HTMLSelectElement>();
   }
 
-  handleOnChange(): void {
-    this.props.onChange(this.inputRef.current?.value || '');
+  getValue(): string {
+    return this.inputRef.current?.value || '';
   }
 
   render(): ReactNode {
@@ -23,7 +23,6 @@ export default class FieldPreferCity extends Component<IElementProps> {
         </label>
         <select
           ref={this.inputRef}
-          onChange={() => this.handleOnChange()}
           id="fieldPreferCity"
           name="fieldPreferCity"
           aria-label="input-prefer-city"
