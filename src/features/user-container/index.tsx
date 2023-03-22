@@ -16,18 +16,13 @@ export default class UserContainer extends Component<Record<string, never>, IUse
   addUser(user: TypeUser) {
     this.setState(
       (prevState: IUserContainerState) => {
-        const users = [...prevState.users];
-        users.push({ ...user, id: `${Date.now()}` });
-
-        return { users: users };
+        return { users: [...prevState.users, { ...user, id: `${Date.now()}` }] };
       },
-      () => this.showAlertMessage()
+      () => {
+        this.setState({ isAlertShowed: true });
+        setTimeout(() => this.setState({ isAlertShowed: false }), 4000);
+      }
     );
-  }
-
-  showAlertMessage() {
-    this.setState({ isAlertShowed: true });
-    setTimeout(() => this.setState({ isAlertShowed: false }), 4000);
   }
 
   render(): ReactNode {
