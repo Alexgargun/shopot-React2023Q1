@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { TypeFormValue } from 'entities/user';
 import { describe, it, vi } from 'vitest';
 import FieldProgramming from '.';
