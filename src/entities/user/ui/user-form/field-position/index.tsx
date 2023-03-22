@@ -4,7 +4,7 @@ import { IElementProps } from 'entities/user/types';
 
 const positions = ['Junior', 'Middle', 'Senior'];
 
-export default class FieldPosition extends Component<IElementProps> {
+export class FieldPosition extends Component<IElementProps> {
   private inputRefs: RefObject<HTMLInputElement>[];
 
   constructor(props: IElementProps) {

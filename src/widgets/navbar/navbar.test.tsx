@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { describe, expect } from 'vitest';
-import Navbar from './ui';
+import { Navbar } from './ui';
 
 const matchText = 'TEST-HEADER';
 

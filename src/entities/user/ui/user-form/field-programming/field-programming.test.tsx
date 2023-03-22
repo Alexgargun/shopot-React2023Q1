@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import FieldProgramming from '.';
+import { FieldProgramming } from '.';
 
 describe('Test FieldProgramming', () => {
   it('Test set value', () => {

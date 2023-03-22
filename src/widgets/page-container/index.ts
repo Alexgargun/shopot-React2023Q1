@@ -1,1 +1,1 @@
-export { default as PageContainer } from './ui';
+export * from './ui';

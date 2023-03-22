@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import FieldPosition from '.';
+import { FieldPosition } from '.';
 
 const setup = () => {
   const utils = render(<FieldPosition error="" />);

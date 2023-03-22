@@ -1,1 +1,1 @@
-export { default as SearchBar } from './ui';
+export * from './ui';

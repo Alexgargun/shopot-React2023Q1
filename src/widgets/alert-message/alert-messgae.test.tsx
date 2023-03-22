@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
-import AlertMessage from '.';
+import { AlertMessage } from '.';
 
 const matchMessage = 'Test message';
 

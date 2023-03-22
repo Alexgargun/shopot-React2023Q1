@@ -6,7 +6,7 @@ interface IMainPageState {
   cards: TypeCard[];
 }
 
-class MainPage extends Component<Record<string, never>, IMainPageState> {
+export class MainPage extends Component<Record<string, never>, IMainPageState> {
   constructor(props: Record<string, never>) {
     super(props);
 
@@ -37,5 +37,3 @@ class MainPage extends Component<Record<string, never>, IMainPageState> {
     );
   }
 }
-
-export default MainPage;

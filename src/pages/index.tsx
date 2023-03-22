@@ -2,10 +2,10 @@ import { Component, ReactNode } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { TypeRoute } from 'shared/types';
 import { PageContainer } from 'widgets/page-container';
-import AboutPage from './about';
-import Error404 from './error404';
-import FormsPage from './forms';
-import MainPage from './main';
+import { AboutPage } from './about';
+import { Error404 } from './error404';
+import { FormsPage } from './forms';
+import { MainPage } from './main';
 
 export const enum RouteEndpoint {
   Index = '/index.html',
@@ -22,7 +22,7 @@ export const routes: TypeRoute[] = [
   { title: 'About Us', path: RouteEndpoint.About, key: 'about-page' },
 ];
 
-export default class Routing extends Component {
+export class Routing extends Component {
   render(): ReactNode {
     return (
       <Routes>

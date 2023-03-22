@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, describe, expect, vi } from 'vitest';
-import UserCardList from '.';
+import { UserCardList } from '.';
 
 const str = JSON.stringify([{ name: 'teresa teng' }]);
 const blob = new Blob([str]);

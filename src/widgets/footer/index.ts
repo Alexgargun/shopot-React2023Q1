@@ -1,1 +1,1 @@
-export { default as Footer } from './ui';
+export * from './ui';

@@ -8,7 +8,7 @@ type TypeNavbarProps = {
   routes: TypeRoute[];
 };
 
-export default class Navbar extends Component<TypeNavbarProps> {
+export class Navbar extends Component<TypeNavbarProps> {
   getLinkStyle(isActive: boolean) {
     return isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink;
   }

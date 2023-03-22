@@ -10,7 +10,7 @@ interface CardListState {
   cards: TypeCard[];
 }
 
-export default class CardList extends Component<CardListProps, CardListState> {
+export class CardList extends Component<CardListProps, CardListState> {
   render(): ReactNode {
     if (this.props.cards.length === 0) {
       return <div className="text-center">No data</div>;

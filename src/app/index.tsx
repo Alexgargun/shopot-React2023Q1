@@ -1,4 +1,4 @@
-import Routing from 'pages';
+import { Routing } from 'pages';
 import { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';

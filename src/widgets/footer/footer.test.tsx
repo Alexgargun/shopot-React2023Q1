@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, describe, expect } from 'vitest';
-import Footer from './ui';
+import { Footer } from './ui';
 
 /**
  * @vitest-environment jsdom

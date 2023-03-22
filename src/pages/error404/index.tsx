@@ -1,6 +1,6 @@
 import { Component, ReactNode } from 'react';
 
-export default class Error404 extends Component {
+export class Error404 extends Component {
   render(): ReactNode {
     return (
       <div className="container">

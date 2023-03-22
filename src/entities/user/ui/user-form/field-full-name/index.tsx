@@ -2,7 +2,7 @@ import styles from '../styles.module.scss';
 import { Component, createRef, ReactNode, RefObject } from 'react';
 import { IElementProps } from 'entities/user/types';
 
-export default class FieldFullName extends Component<IElementProps> {
+export class FieldFullName extends Component<IElementProps> {
   private inputRef: RefObject<HTMLInputElement>;
 
   constructor(props: IElementProps) {

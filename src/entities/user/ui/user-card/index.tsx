@@ -6,7 +6,7 @@ interface IUserCardProps {
   user: TypeUser;
 }
 
-export default class UserCard extends Component<IUserCardProps> {
+export class UserCard extends Component<IUserCardProps> {
   render(): ReactNode {
     const { fullName, email, dateOfBirth, preferCity, programming, position, avatar } =
       this.props.user;

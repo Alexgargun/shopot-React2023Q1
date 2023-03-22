@@ -7,7 +7,7 @@ interface UserCardListProps {
   users: TypeUser[];
 }
 
-export default class UserCardList extends Component<UserCardListProps> {
+export class UserCardList extends Component<UserCardListProps> {
   render(): ReactNode {
     if (this.props.users.length === 0) {
       return (

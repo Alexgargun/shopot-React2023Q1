@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import PageContainer from './ui';
+import { PageContainer } from './ui';
 
 const matchH1Text = 'Test page';
 

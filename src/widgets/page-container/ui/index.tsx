@@ -9,7 +9,7 @@ type TypePageContainerProps = {
   routes: TypeRoute[];
 };
 
-export default class PageContainer extends Component<TypePageContainerProps> {
+export class PageContainer extends Component<TypePageContainerProps> {
   render(): ReactNode {
     const { routes, headerText, content } = this.props;
 

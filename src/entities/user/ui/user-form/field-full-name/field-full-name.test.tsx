@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import FieldFullName from '.';
+import { FieldFullName } from '.';
 
 const setup = () => {
   const utils = render(<FieldFullName error="" />);

@@ -7,7 +7,7 @@ interface SearchBarState {
   search: string;
 }
 
-export default class SearchBar extends Component<Record<string, never>, SearchBarState> {
+export class SearchBar extends Component<Record<string, never>, SearchBarState> {
   constructor(props: Record<string, never>) {
     super(props);
 

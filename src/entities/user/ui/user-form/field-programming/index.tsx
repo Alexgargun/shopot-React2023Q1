@@ -3,7 +3,7 @@ import { Component, createRef, ReactNode, RefObject } from 'react';
 import { IElementProps } from 'entities/user/types';
 import programming from 'entities/user/data/programming.json';
 
-export default class FieldProgramming extends Component<IElementProps> {
+export class FieldProgramming extends Component<IElementProps> {
   private inputRefs: RefObject<HTMLInputElement>[];
 
   constructor(props: IElementProps) {

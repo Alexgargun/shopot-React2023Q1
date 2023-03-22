@@ -5,7 +5,7 @@ type TypeButtonProps = typeof Button.defaultProps & {
   variant: 'default' | 'primary';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default class Button extends Component<TypeButtonProps> {
+export class Button extends Component<TypeButtonProps> {
   static defaultProps = {
     variant: 'default',
   };

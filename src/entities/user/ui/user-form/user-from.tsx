@@ -11,9 +11,9 @@ import {
   TypeUser,
 } from 'entities/user';
 import { initialUserFrom } from './user-form.initial';
-import FieldProgramming from './field-programming';
-import FieldPosition from './field-position';
-import FieldAvatar from './field-avatar';
+import { FieldProgramming } from './field-programming';
+import { FieldPosition } from './field-position';
+import { FieldAvatar } from './field-avatar';
 
 interface IUserFormsState {
   errors: TypeErrors;
@@ -23,7 +23,7 @@ interface IUserFormProps {
   addUser: (user: TypeUser) => void;
 }
 
-export default class UserForm extends Component<IUserFormProps, IUserFormsState> {
+export class UserForm extends Component<IUserFormProps, IUserFormsState> {
   private formRef: RefObject<HTMLFormElement>;
   private form: {
     fullName: RefObject<FieldFullName>;

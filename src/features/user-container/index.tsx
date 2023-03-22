@@ -1,12 +1,12 @@
 import { Component, ReactNode } from 'react';
 import { TypeUser, UserCardList, UserForm } from 'entities/user';
-import AlertMessage from 'widgets/alert-message';
+import { AlertMessage } from 'widgets/alert-message';
 
 interface IUserContainerState {
   users: TypeUser[];
   isAlertShowed: boolean;
 }
-export default class UserContainer extends Component<Record<string, never>, IUserContainerState> {
+export class UserContainer extends Component<Record<string, never>, IUserContainerState> {
   constructor(props: Record<string, never>) {
     super(props);
 

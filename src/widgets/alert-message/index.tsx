@@ -5,7 +5,7 @@ interface AlertMessageProps {
   message: string;
 }
 
-export default class AlertMessage extends Component<AlertMessageProps> {
+export class AlertMessage extends Component<AlertMessageProps> {
   render(): ReactNode {
     return (
       <div className={styles.messageWrapper}>

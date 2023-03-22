@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import FieldEmail from '.';
+import { FieldEmail } from '.';
 
 const matchString = 'email@example.com';
 

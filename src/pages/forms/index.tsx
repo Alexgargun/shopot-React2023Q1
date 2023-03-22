@@ -1,7 +1,7 @@
-import UserContainer from 'features/user-container';
+import { UserContainer } from 'features/user-container';
 import { Component, ReactNode } from 'react';
 
-export default class FormsPage extends Component {
+export class FormsPage extends Component {
   render(): ReactNode {
     return (
       <div className="container">

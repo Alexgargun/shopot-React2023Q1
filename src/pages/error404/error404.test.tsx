@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import Error404 from '.';
+import { Error404 } from '.';
 
 /**
  * @vitest-environment jsdom

@@ -8,7 +8,7 @@ interface ICardProps {
 
 type TypeCardState = TypeCard;
 
-export default class Card extends Component<ICardProps, TypeCardState> {
+export class Card extends Component<ICardProps, TypeCardState> {
   render(): ReactNode {
     const { title, owner, image, views, likes, addedAt } = this.props.card;
 
