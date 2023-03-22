@@ -20,7 +20,7 @@ describe('Test FieldDateOfBirth', () => {
   it('Test onInput with value', () => {
     const { input } = setup();
     fireEvent.input(input, { target: { value: matchString } });
-    expect(input.value).toBe(matchString);
+    expect(input).toHaveValue(matchString);
     expect(mockOnChange).toBeCalledTimes(1);
     expect(mockOnChange).toHaveReturnedWith(matchString);
   });
