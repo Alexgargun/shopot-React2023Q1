@@ -21,7 +21,7 @@ export default class FieldPosition extends Component<IElementProps> {
                   onInput={() => this.handleOnChange(position)}
                   name="fieldPosition"
                   id={`fieldPosition${position}`}
-                  aria-label="input-programming"
+                  aria-label={`input-position-${position}`}
                   className={styles.formInput}
                   type="radio"
                   value={position}
