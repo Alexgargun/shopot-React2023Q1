@@ -33,7 +33,7 @@ export default class FieldPreferCity extends Component<IElementProps> {
           <option value="-">-- Select --</option>
           <option value="Bangkok">Bangkok</option>
           <option value="Paris">Paris</option>
-          <option value="Landon">Landon</option>
+          <option value="London">London</option>
           <option value="Dubai">Dubai</option>
           <option value="Singapore">Singapore</option>
           <option value="New York">New York</option>
