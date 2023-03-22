@@ -1,8 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { FieldEmail, TypeFormValue } from 'entities/user';
-import { describe, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
-const mockOnChange = vi.fn((value: TypeFormValue) => value);
+const matchString = 'email@example.com';
+
+const mockOnChange = vi.fn((value: TypeFormValue) => {
+  expect(value).toBe(matchString);
+  return matchString;
+});
 
 const setup = () => {
   const utils = render(<FieldEmail error="" onChange={mockOnChange} />);
@@ -14,13 +19,11 @@ const setup = () => {
   };
 };
 
-const matchString = 'email@example.com';
-
 describe('Test FieldEmail', () => {
-  it('Test onInput with value', () => {
+  it('Test FieldEmail with value', () => {
     const { input } = setup();
     fireEvent.input(input, { target: { value: matchString } });
-    expect(input.value).toBe(matchString);
+    expect(input).toHaveValue(matchString);
     expect(mockOnChange).toBeCalledTimes(1);
     expect(mockOnChange).toHaveReturnedWith(matchString);
   });
