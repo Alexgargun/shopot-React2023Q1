@@ -1,10 +1,10 @@
-# Task - React. Components
+# Task - React. Forms
 
-[Link to task](https://github.com/rolling-scopes-school/tasks/tree/master/react/modules/module01)
+[Link to task](https://github.com/rolling-scopes-school/tasks/tree/master/react/modules/module02)
 
-Start date: 2023-03-13 03:00
+Start date: 2023-03-20 03:00
 
-End date: 2023-03-20 02:59
+End date: 2023-03-27 02:59
 
 ## Deploy
 
@@ -15,7 +15,7 @@ End date: 2023-03-20 02:59
 ```bash
 $ git clone https://github.com/shopot/shopot-React2023Q1.git
 $ cd shopot-React2023Q1
-$ git checkout react-components
+$ git checkout react-forms
 $ npm install
 ```
 
