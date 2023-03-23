@@ -96,7 +96,7 @@ export class UserForm extends Component<IUserFormProps, IUserFormsState> {
   render(): ReactNode {
     return (
       <div className={styles.formWrapper}>
-        <form ref={this.formRef} onSubmit={(e: FormEvent) => this.handleFormSubmit(e)}>
+        <form ref={this.formRef}>
           <div className={styles.formRow}>
             <FieldFullName error={this.state.errors.fullName} ref={this.form.fullName} />
             <FieldEmail error={this.state.errors.email} ref={this.form.email} />
@@ -113,7 +113,12 @@ export class UserForm extends Component<IUserFormProps, IUserFormsState> {
             <FieldAvatar error={this.state.errors.avatar} ref={this.form.avatar} />
           </div>
           <div className={`${styles.formRow} flex-center`}>
-            <Button variant="primary" aria-label="button-submit">
+            <Button
+              onClick={(e: FormEvent) => this.handleFormSubmit(e)}
+              type="button"
+              variant="primary"
+              aria-label="button-submit"
+            >
               Send
             </Button>
             <Button type="button" onClick={() => this.resetFrom()} aria-label="button-reset">
