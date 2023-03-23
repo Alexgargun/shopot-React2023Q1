@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -12,5 +12,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
