@@ -8,7 +8,7 @@ End date: 2023-03-27 02:59
 
 ## Deploy
 
-[https://react-components-shopot.netlify.app/](https://react-components-shopot.netlify.app/)
+[https://react-components-shopot.netlify.app/](https://react-components-shopot.netlify.app/forms)
 
 ## Installation
 
