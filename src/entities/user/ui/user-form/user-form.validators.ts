@@ -1,12 +1,12 @@
 import { ALLOWED_IMAGES_TYPES } from 'entities/user';
 import { TypeErrors, TypeUser } from 'entities/user/types';
 
-export const fullNameValidator = (firstName: string) => {
-  if (!firstName) {
+export const fullNameValidator = (fullName: string) => {
+  if (!fullName) {
     return 'Full Name is required';
   } else if (
-    firstName.charAt(0) !== firstName.charAt(0).toUpperCase() ||
-    !/[a-zA-Z_0-9а-яА-Я]{3,} [a-zA-Z_0-9а-яА-Я]{3,}$/.test(firstName)
+    fullName.charAt(0) !== fullName.charAt(0).toUpperCase() ||
+    !/[a-zA-Z_0-9а-яА-Я]{3,} [a-zA-Z_0-9а-яА-Я]{3,}$/.test(fullName)
   ) {
     return 'Incorrect input full name';
   }
