@@ -16,7 +16,12 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      exclude: [...configDefaults.coverage.exclude, 'src/shared/types', 'src/main.tsx'],
+      exclude: [
+        ...configDefaults.coverage.exclude,
+        'src/shared/types',
+        'src/main.tsx',
+        'src/__test__/__mocks__',
+      ],
       all: true,
       src: ['src'],
       provider: 'c8',
@@ -24,7 +29,7 @@ export default defineConfig({
     },
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
+    setupFiles: './src/__test__/setup.ts',
     // you might want to disable it, if you don't have tests that rely on CSS
     // since parsing CSS is slow
     css: false,
